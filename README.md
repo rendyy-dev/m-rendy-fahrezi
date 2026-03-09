@@ -41,7 +41,7 @@ Salah satu proyek utama yang ditampilkan adalah **Luxury Landing Page for MUA**,
 ## 📬 Contact Me
 Saya terbuka untuk kolaborasi proyek atau peluang kerja.
 - **Instagram:** [@renn.dyy02](https://www.instagram.com/renn.dyy02/)
-- **WhatsApp:** [Hubungi Saya](https://wa.me/628XXXXXXXXXX)
+- **WhatsApp:** [Hubungi Saya](https://wa.me/62895602803795)
 
 ---
 *Crafted with 💚 and Code by Muhammad Rendy Fahrezi - RPL Student*

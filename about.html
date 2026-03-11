@@ -6,7 +6,6 @@
     <title>Tentang - Muhammad Rendy Fahrezi</title>
     <meta name="description" content="Tentang Muhammad Rendy Fahrezi - Web Developer & Digital Craftsman">
     
-    <!-- Font Awesome untuk ikon (konsisten dengan halaman lain) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -59,10 +58,6 @@
             background-size: 60px 60px; 
         }
 
-        /* Navigation Styles (untuk fallback) */
-        .navbar .glassmorphism { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
-        .navbar.scrolled .glassmorphism { background: rgba(15, 23, 42, 0.95); border-bottom-color: rgba(16, 185, 129, 0.2); }
-        
         .nav-link { display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 1rem; color: #94a3b8; font-size: 0.875rem; font-weight: 500; position: relative; transition: all 0.3s ease; border-radius: 0.5rem; }
         .nav-link::before { content: ''; position: absolute; bottom: 0.25rem; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: linear-gradient(90deg, #10b981, #34d399); border-radius: 2px; transition: width 0.3s ease; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
         .nav-link:hover { color: #f1f5f9; background: rgba(16, 185, 129, 0.05); }
@@ -76,7 +71,6 @@
         .mobile-nav-link:hover, .mobile-nav-link.active { color: #10b981; background: rgba(16, 185, 129, 0.1); }
         .mobile-nav-link.active { border-left: 2px solid #10b981; }
 
-        /* Footer Styles */
         .footer-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: #94a3b8; font-size: 0.875rem; transition: all 0.3s ease; }
         .footer-link:hover { color: #10b981; transform: translateX(4px); }
         .tech-badge { padding: 0.25rem 0.75rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.4); border-radius: 9999px; font-size: 0.7rem; color: #64748b; transition: all 0.3s ease; }
@@ -84,17 +78,15 @@
         .social-btn { width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 0.75rem; color: #94a3b8; transition: all 0.3s ease; }
         .social-btn:hover { color: #10b981; border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); transform: translateY(-2px); }
 
-        /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
-        
-        /* About Page Specific */
+
+        /* ===== PHOTO FRAME ===== */
         .photo-frame { 
             position: relative; 
-            aspect-ratio: 3/4; 
             border-radius: 1rem; 
             overflow: hidden; 
         }
@@ -128,7 +120,8 @@
             transition: transform 0.5s ease; 
         }
         .photo-frame:hover img { transform: scale(1.05); }
-        
+
+        /* ===== SKILL BAR ===== */
         .skill-bar { 
             height: 8px; 
             background: rgba(30, 41, 59, 0.8); 
@@ -147,9 +140,7 @@
         .skill-bar-fill::after { 
             content: ''; 
             position: absolute; 
-            right: 0; 
-            top: 0; 
-            bottom: 0; 
+            right: 0; top: 0; bottom: 0; 
             width: 20px; 
             background: rgba(255, 255, 255, 0.3); 
             filter: blur(4px); 
@@ -170,17 +161,13 @@
         
         .timeline-line { 
             position: absolute; 
-            left: 7px; 
-            top: 0; 
-            bottom: 0; 
+            left: 7px; top: 0; bottom: 0; 
             width: 2px; 
             background: linear-gradient(180deg, #10b981, rgba(16, 185, 129, 0.1)); 
         }
         .timeline-dot { 
-            position: absolute; 
-            left: 0; 
-            width: 16px; 
-            height: 16px; 
+            position: absolute; left: 0; 
+            width: 16px; height: 16px; 
             background: #020617; 
             border: 2px solid #10b981; 
             border-radius: 50%; 
@@ -192,54 +179,194 @@
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
         .blob { 
-            position: absolute; 
-            border-radius: 50%; 
-            filter: blur(80px); 
-            opacity: 0.3; 
-            z-index: -1; 
-            max-width: 100vw; 
-            pointer-events: none; 
+            position: absolute; border-radius: 50%; filter: blur(80px); 
+            opacity: 0.3; z-index: -1; pointer-events: none; 
         }
 
-        /* Mobile Fixes */
-        @media (max-width: 768px) {
-            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
-                padding-left: 1rem;
-                padding-right: 1rem;
+        /* ===== MOBILE LAYOUT ===== */
+        @media (max-width: 1023px) {
+
+            /* --- Hero: foto kiri kecil, teks kanan --- */
+            .about-hero-grid {
+                display: grid !important;
+                grid-template-columns: 120px 1fr !important;
+                grid-template-rows: auto auto !important;
+                column-gap: 0.75rem !important;
+                align-items: start !important;
             }
+
+            /* Foto: col 1, row 1 */
+            .about-photo-col {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+            }
+
+            /* Foto ukuran kecil di mobile, portrait tapi proporsional */
+            .about-photo-col .photo-frame {
+                width: 120px !important;
+                height: 160px !important;
+                max-width: 120px !important;
+                margin: 0 !important;
+            }
+
+            /* Wrapper foto juga ikut fixed */
+            .about-photo-col > div {
+                max-width: 120px !important;
+            }
+
+            /* Sembunyikan dekorasi floating di mobile */
+            .about-photo-deco { display: none !important; }
+
+            /* Badge di bawah foto lebih kecil */
+            .about-photo-badge {
+                position: static !important;
+                transform: none !important;
+                margin-top: 0.5rem !important;
+                display: flex !important;
+                justify-content: flex-start !important;
+                overflow: visible !important;
+            }
+            .about-photo-badge > div {
+                padding: 0.2rem 0.6rem !important;
+                font-size: 0.6rem !important;
+                gap: 0.3rem !important;
+                white-space: nowrap !important;
+            }
+            .about-photo-badge .w-2 {
+                width: 6px !important;
+                height: 6px !important;
+                flex-shrink: 0 !important;
+            }
+
+            /* Wrapper foto: overflow visible agar badge bisa keluar */
+            .about-photo-col > div {
+                max-width: 120px !important;
+                overflow: visible !important;
+            }
+
+            /* Teks kanan: col 2, row 1 */
+            .about-info-col {
+                grid-column: 2 !important;
+                grid-row: 1 !important;
+            }
+
+            /* Judul lebih kecil */
+            .about-info-col h1 {
+                font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+                line-height: 1.25 !important;
+                margin-top: 0.25rem !important;
+            }
+
+            /* Label "Tentang Saya" */
+            .about-info-col .text-emerald-400.text-sm {
+                font-size: 0.7rem !important;
+            }
+
+            /* Sembunyikan paragraf panjang & stats & tombol dari dalam grid row 1,
+               pindahkan ke full-width row 2 */
+            .about-info-col .about-desc,
+            .about-info-col .about-stats,
+            .about-info-col .about-btns {
+                display: none !important;
+            }
+
+            /* Full-width block: col 1/-1, row 2 */
+            .about-fullwidth-block {
+                grid-column: 1 / -1 !important;
+                grid-row: 2 !important;
+                padding-top: 1rem !important;
+            }
+
+            .about-fullwidth-block p {
+                font-size: 0.85rem !important;
+                line-height: 1.6 !important;
+            }
+
+            .about-fullwidth-block .about-stats-full {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .about-fullwidth-block .about-stats-full .card-glow {
+                padding: 0.625rem !important;
+            }
+
+            .about-fullwidth-block .about-stats-full .font-display {
+                font-size: 1.25rem !important;
+            }
+
+            .about-fullwidth-block .about-stats-full .text-sm {
+                font-size: 0.65rem !important;
+            }
+
+            .about-fullwidth-block .btn-nav {
+                padding: 0.45rem 1rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            .about-fullwidth-block .border {
+                padding: 0.45rem 1rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            /* Journey & Skills section: stack vertikal di mobile */
+            .journey-skills-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
             .grid-bg { background-size: 30px 30px; }
             .float { animation: none; }
+        }
+
+        @media (max-width: 380px) {
+            .about-hero-grid {
+                grid-template-columns: 100px 1fr !important;
+            }
+            .about-photo-col .photo-frame {
+                width: 100px !important;
+                height: 133px !important;
+            }
+            .about-photo-col > div {
+                max-width: 100px !important;
+            }
+            .about-info-col h1 {
+                font-size: 1rem !important;
+            }
         }
     </style>
 </head>
 <body class="grid-bg">
-    <!-- Navbar Container -->
     <div id="navbar"></div>
 
-    <!-- MAIN CONTENT -->
-    <main class="relative min-h-screen pt-24 pb-20">
-        <!-- Decorative Blobs -->
-        <div class="blob w-96 h-96 bg-emerald-500 top-40 -left-48 animate-pulse"></div>
-        <div class="blob w-80 h-80 bg-emerald-600 bottom-20 -right-40 animate-pulse" style="animation-delay: 1s;"></div>
+    <main class="relative pt-20 pb-16 lg:pt-24 lg:pb-20">
+        <div class="blob w-96 h-96 bg-emerald-500 top-40 -left-48 animate-pulse" style="max-width:50vw;"></div>
+        <div class="blob w-80 h-80 bg-emerald-600 bottom-20 -right-40 animate-pulse" style="animation-delay: 1s; max-width:50vw;"></div>
         
-        <!-- Hero Section with Photo -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-16">
+        <!-- ===== HERO SECTION ===== -->
+        <section class="px-4 sm:px-6 lg:px-8 mb-10 lg:mb-16">
             <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+                <!-- Grid: foto+teks atas | deskripsi+tombol bawah (mobile) -->
+                <div class="about-hero-grid lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
                     
-                    <!-- Left - Photo (3:4 Ratio) -->
-                    <div class="lg:col-span-5 order-1 lg:order-1">
-                        <div class="reveal relative max-w-sm mx-auto lg:mx-0">
-                            <div class="absolute -top-6 -right-6 w-32 h-32 border border-emerald-500/20 rounded-full float" style="animation-delay: 0s;"></div>
-                            <div class="absolute -bottom-4 -left-4 w-20 h-20 border border-emerald-500/10 rounded-full float" style="animation-delay: 1s;"></div>
+                    <!-- [COL 1 mobile / COL 1-5 desktop] Foto -->
+                    <div class="about-photo-col lg:col-span-5 lg:order-1">
+                        <div class="reveal relative lg:max-w-sm lg:mx-0">
+                            <!-- Dekorasi hanya desktop -->
+                            <div class="about-photo-deco absolute -top-6 -right-6 w-32 h-32 border border-emerald-500/20 rounded-full float"></div>
+                            <div class="about-photo-deco absolute -bottom-4 -left-4 w-20 h-20 border border-emerald-500/10 rounded-full float" style="animation-delay: 1s;"></div>
                             
-                            <div class="photo-frame border-2 border-slate-800/50 shadow-2xl shadow-emerald-500/10">
+                            <!-- Foto: desktop pakai aspect-ratio 3/4, mobile fixed size -->
+                            <div class="photo-frame border-2 border-slate-800/50 shadow-2xl shadow-emerald-500/10 lg:aspect-[3/4]">
                                 <img src="assets/foto-about.jpeg" alt="Muhammad Rendy Fahrezi" 
                                      onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=450&h=600&fit=crop&crop=faces'">
                             </div>
                             
-                            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 z-10">
-                                <div class="flex items-center gap-2 px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-emerald-500/30 rounded-full shadow-lg">
+                            <!-- Badge: di bawah foto -->
+                            <div class="about-photo-badge absolute -bottom-4 left-1/2 -translate-x-1/2 z-10">
+                                <div class="flex items-center gap-2 px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-emerald-500/30 rounded-full shadow-lg whitespace-nowrap">
                                     <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
                                     <span class="text-emerald-400 text-sm font-medium">Terbuka untuk Kolaborasi</span>
                                 </div>
@@ -247,17 +374,18 @@
                         </div>
                     </div>
                     
-                    <!-- Right - Info -->
-                    <div class="lg:col-span-7 order-2 lg:order-2">
-                        <div class="reveal mb-8">
-                            <span class="text-emerald-400 text-sm font-medium tracking-wider uppercase">Tentang Saya</span>
-                            <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mt-2 leading-tight">
+                    <!-- [COL 2 mobile / COL 6-12 desktop] Info -->
+                    <div class="about-info-col lg:col-span-7 lg:order-2">
+                        <div class="reveal">
+                            <span class="text-emerald-400 font-medium tracking-wider uppercase" style="font-size: clamp(0.7rem, 2vw, 0.875rem);">Tentang Saya</span>
+                            <h1 class="font-display font-bold text-slate-100 mt-1 leading-tight lg:text-5xl lg:mt-2">
                                 Passionate About<br>
                                 <span class="text-emerald-400">Building Digital Experiences</span>
                             </h1>
                         </div>
                         
-                        <div class="reveal reveal-delay-1 space-y-4 mb-8">
+                        <!-- Konten ini hanya tampil di desktop (lg+) -->
+                        <div class="about-desc hidden lg:block reveal reveal-delay-1 space-y-4 mt-6 mb-8">
                             <p class="text-slate-300 text-lg leading-relaxed">
                                 Halo! Saya <span class="text-emerald-400 font-medium">Muhammad Rendy Fahrezi</span>, 
                                 seorang siswa jurusan Rekayasa Perangkat Lunak (RPL) dengan passion yang kuat 
@@ -271,7 +399,7 @@
                             </p>
                         </div>
                         
-                        <div class="reveal reveal-delay-2 grid grid-cols-3 gap-4 mb-8">
+                        <div class="about-stats hidden lg:grid reveal reveal-delay-2 grid-cols-3 gap-4 mb-8">
                             <div class="card-glow p-4 text-center">
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-emerald-400">3+</div>
                                 <div class="text-slate-400 text-sm mt-1">Proyek</div>
@@ -286,7 +414,7 @@
                             </div>
                         </div>
                         
-                        <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+                        <div class="about-btns hidden lg:flex reveal reveal-delay-3 flex-wrap gap-4">
                             <a href="portofolio.html" class="btn-nav">
                                 <span>Lihat Karya Saya</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,125 +426,154 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- [MOBILE ONLY] Full-width: deskripsi + stats + tombol -->
+                    <div class="about-fullwidth-block lg:hidden">
+                        <div class="reveal reveal-delay-1 space-y-3 mb-5">
+                            <p class="text-slate-300 leading-relaxed">
+                                Halo! Saya <span class="text-emerald-400 font-medium">Muhammad Rendy Fahrezi</span>, 
+                                seorang siswa jurusan RPL dengan passion kuat dalam pengembangan web.
+                            </p>
+                            <p class="text-slate-400 leading-relaxed">
+                                Memulai perjalanan coding sejak 2 tahun lalu, fokus menciptakan website 
+                                yang menarik, berkinerja tinggi, dan memiliki user experience yang baik.
+                            </p>
+                        </div>
+                        
+                        <div class="reveal reveal-delay-2 about-stats-full grid grid-cols-3 gap-2 mb-5">
+                            <div class="card-glow p-3 text-center">
+                                <div class="font-display text-xl font-bold text-emerald-400">3+</div>
+                                <div class="text-slate-400 mt-0.5" style="font-size:0.65rem;">Proyek</div>
+                            </div>
+                            <div class="card-glow p-3 text-center">
+                                <div class="font-display text-xl font-bold text-emerald-400">2+</div>
+                                <div class="text-slate-400 mt-0.5" style="font-size:0.65rem;">Tahun</div>
+                            </div>
+                            <div class="card-glow p-3 text-center">
+                                <div class="font-display text-xl font-bold text-emerald-400">19</div>
+                                <div class="text-slate-400 mt-0.5" style="font-size:0.65rem;">Teknologi</div>
+                            </div>
+                        </div>
+                        
+                        <div class="reveal reveal-delay-3 flex flex-wrap gap-3">
+                            <a href="portofolio.html" class="btn-nav" style="padding:0.45rem 1rem; font-size:0.8rem;">
+                                <span>Lihat Karya</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            <a href="contact.html" class="px-3.5 py-2 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 font-medium" style="font-size:0.8rem;">
+                                Kontak Saya
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
         
-        <!-- Journey & Skills -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-16">
+        <!-- ===== JOURNEY & SKILLS ===== -->
+        <section class="px-4 sm:px-6 lg:px-8 mb-10 lg:mb-16">
             <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12">
+                <div class="journey-skills-grid grid lg:grid-cols-2 gap-8 lg:gap-12">
                     
-                    <!-- Journey -->
+                    <!-- Journey / Timeline -->
                     <div>
-                        <div class="reveal mb-8">
-                            <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-100 mb-2">Perjalanan Saya</h2>
-                            <p class="text-slate-400">Path yang telah saya lalui</p>
+                        <div class="reveal mb-6 lg:mb-8">
+                            <h2 class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-slate-100 mb-1">Perjalanan Saya</h2>
+                            <p class="text-slate-400 text-sm">Path yang telah saya lalui</p>
                         </div>
                         
                         <div class="reveal reveal-delay-1 relative pl-8">
                             <div class="timeline-line"></div>
-                            
-                            <div class="space-y-8">
+                            <div class="space-y-5 lg:space-y-8">
                                 <div class="relative">
                                     <div class="timeline-dot filled"></div>
-                                    <div class="card-glow p-5 ml-4">
+                                    <div class="card-glow p-4 lg:p-5 ml-4">
                                         <span class="text-emerald-400 text-sm font-medium">2023</span>
-                                        <h3 class="font-display text-lg font-semibold text-slate-200 mt-1">Masuk Jurusan RPL</h3>
-                                        <p class="text-slate-400 text-sm mt-2">Menjadi siswa RPL dan mulai belajar JavaScript, PHP, dan Laravel secara mendalam.</p>
+                                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mt-1">Masuk Jurusan RPL</h3>
+                                        <p class="text-slate-400 text-sm mt-1.5">Menjadi siswa RPL dan mulai belajar JavaScript, PHP, dan Laravel secara mendalam.</p>
                                     </div>
                                 </div>
                                 
                                 <div class="relative">
                                     <div class="timeline-dot filled"></div>
-                                    <div class="card-glow p-5 ml-4">
+                                    <div class="card-glow p-4 lg:p-5 ml-4">
                                         <span class="text-emerald-400 text-sm font-medium">2024</span>
-                                        <h3 class="font-display text-lg font-semibold text-slate-200 mt-1">Memulai Belajar Coding</h3>
-                                        <p class="text-slate-400 text-sm mt-2">Pertama kali mengenal HTML & CSS dan mulai tertarik dengan dunia web development.</p>
+                                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mt-1">Memulai Belajar Coding</h3>
+                                        <p class="text-slate-400 text-sm mt-1.5">Pertama kali mengenal HTML & CSS dan mulai tertarik dengan dunia web development.</p>
                                     </div>
                                 </div>
                                 
                                 <div class="relative">
                                     <div class="timeline-dot"></div>
-                                    <div class="card-glow p-5 ml-4">
+                                    <div class="card-glow p-4 lg:p-5 ml-4">
                                         <span class="text-emerald-400 text-sm font-medium">2026</span>
-                                        <h3 class="font-display text-lg font-semibold text-slate-200 mt-1">Freelance & Projects</h3>
-                                        <p class="text-slate-400 text-sm mt-2">Mengerjakan berbagai project nyata untuk klien dan mendalami VPS management.</p>
+                                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mt-1">Freelance & Projects</h3>
+                                        <p class="text-slate-400 text-sm mt-1.5">Mengerjakan berbagai project nyata untuk klien dan mendalami VPS management.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Skills dengan Progress Bar -->
+                    <!-- Skills -->
                     <div>
-                        <div class="reveal mb-8">
-                            <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-100 mb-2">Technical Skills</h2>
-                            <p class="text-slate-400">Tingkat penguasaan teknologi</p>
+                        <div class="reveal mb-6 lg:mb-8">
+                            <h2 class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-slate-100 mb-1">Technical Skills</h2>
+                            <p class="text-slate-400 text-sm">Tingkat penguasaan teknologi</p>
                         </div>
                         
-                        <div class="reveal reveal-delay-1 card-glow p-6">
-                            <div class="space-y-6">
+                        <div class="reveal reveal-delay-1 card-glow p-4 lg:p-6">
+                            <div class="space-y-4 lg:space-y-6">
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">HTML & CSS</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">HTML & CSS</span>
                                         <span class="text-emerald-400 text-sm">90%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 90%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 90%;"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">JavaScript</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">JavaScript</span>
                                         <span class="text-emerald-400 text-sm">75%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 75%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 75%;"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">Laravel</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">Laravel</span>
                                         <span class="text-emerald-400 text-sm">70%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 70%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 70%;"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">React & Next.js</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">React & Next.js</span>
                                         <span class="text-emerald-400 text-sm">65%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 65%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 65%;"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">Tailwind CSS</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">Tailwind CSS</span>
                                         <span class="text-emerald-400 text-sm">85%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 85%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 85%;"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="text-slate-300 font-medium">Ubuntu & VPS</span>
+                                    <div class="flex justify-between mb-1.5">
+                                        <span class="text-slate-300 font-medium text-sm">Ubuntu & VPS</span>
                                         <span class="text-emerald-400 text-sm">50%</span>
                                     </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" style="--width: 50%;"></div>
-                                    </div>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="--width: 50%;"></div></div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Tech Stack Lengkap dengan Ikon (seperti di index.html) -->
-                        <div class="reveal reveal-delay-2 mt-8">
-                            <h3 class="font-display text-lg font-semibold text-slate-200 mb-4">Tech Stack Lengkap</h3>
+                        <!-- Tech Stack Badges -->
+                        <div class="reveal reveal-delay-2 mt-6 lg:mt-8">
+                            <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mb-3">Tech Stack Lengkap</h3>
                             <div class="flex flex-wrap gap-2">
                                 <span class="tech-badge"><i class="fab fa-html5 mr-1"></i>HTML5</span>
                                 <span class="tech-badge"><i class="fab fa-css3-alt mr-1"></i>CSS3</span>
@@ -445,30 +602,31 @@
         </section>
     </main>
 
-    <!-- Footer Container -->
     <div id="footer"></div>
 
-    <!-- Scripts -->
     <script src="js/components.js"></script>
     <script>
-        // Animate skill bars on reveal
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('revealed'); });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Animate skill bars
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const skillBars = entry.target.querySelectorAll('.skill-bar-fill');
                     skillBars.forEach(bar => { 
-                        setTimeout(() => { 
-                            bar.classList.add('animated'); 
-                        }, 300); 
+                        setTimeout(() => { bar.classList.add('animated'); }, 300); 
                     });
                     skillObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
         
-        document.querySelectorAll('.card-glow').forEach(el => { 
-            skillObserver.observe(el); 
-        });
+        document.querySelectorAll('.card-glow').forEach(el => { skillObserver.observe(el); });
     </script>
 </body>
 </html>

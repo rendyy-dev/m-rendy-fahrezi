@@ -6,12 +6,7 @@
     <title>Muhammad Rendy Fahrezi - Digital Craftsman</title>
     <meta name="description" content="Portfolio Muhammad Rendy Fahrezi - Web Developer & Digital Craftsman">
 
-    <!-- Simple Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/simple-icons.svg">
-     <!-- Font Awesome untuk ikon (opsional, lebih lengkap) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- ATAU menggunakan Devicon (lebih khusus untuk tech icons) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,7 +28,6 @@
     </script>
     
     <style>
-        /* Base & Theme Variables */
         :root {
             --bg-primary: #020617;
             --accent: #10b981;
@@ -52,7 +46,6 @@
             position: relative;
         }
         
-        /* Utility Classes */
         .glassmorphism {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
@@ -67,10 +60,6 @@
             background-size: 60px 60px;
         }
 
-        /* Navigation Styles */
-        .navbar .glassmorphism { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
-        .navbar.scrolled .glassmorphism { background: rgba(15, 23, 42, 0.95); border-bottom-color: rgba(16, 185, 129, 0.2); }
-        
         .nav-link { display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 1rem; color: #94a3b8; font-size: 0.875rem; font-weight: 500; position: relative; transition: all 0.3s ease; border-radius: 0.5rem; }
         .nav-link::before { content: ''; position: absolute; bottom: 0.25rem; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: linear-gradient(90deg, #10b981, #34d399); border-radius: 2px; transition: width 0.3s ease; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
         .nav-link:hover { color: #f1f5f9; background: rgba(16, 185, 129, 0.05); }
@@ -79,20 +68,19 @@
         
         .btn-nav { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; background: linear-gradient(135deg, #059669, #10b981); color: #020617; font-size: 0.875rem; font-weight: 600; border-radius: 0.5rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
         .btn-nav:hover { box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); transform: translateY(-1px); }
-        
-        .mobile-nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; color: #94a3b8; font-size: 0.9rem; border-radius: 0.75rem; transition: all 0.3s ease; }
-        .mobile-nav-link:hover, .mobile-nav-link.active { color: #10b981; background: rgba(16, 185, 129, 0.1); }
-        .mobile-nav-link.active { border-left: 2px solid #10b981; }
 
-        /* Footer Styles */
         .footer-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: #94a3b8; font-size: 0.875rem; transition: all 0.3s ease; }
         .footer-link:hover { color: #10b981; transform: translateX(4px); }
         .tech-badge { padding: 0.25rem 0.75rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.4); border-radius: 9999px; font-size: 0.7rem; color: #64748b; transition: all 0.3s ease; }
         .tech-badge:hover { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #10b981; }
         .social-btn { width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 0.75rem; color: #94a3b8; transition: all 0.3s ease; }
         .social-btn:hover { color: #10b981; border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); transform: translateY(-2px); }
+        .mobile-nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; color: #94a3b8; font-size: 0.9rem; border-radius: 0.75rem; transition: all 0.3s ease; }
+        .mobile-nav-link:hover, .mobile-nav-link.active { color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .mobile-nav-link.active { border-left: 2px solid #10b981; }
+        .navbar .glassmorphism { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
+        .navbar.scrolled .glassmorphism { background: rgba(15, 23, 42, 0.95); border-bottom-color: rgba(16, 185, 129, 0.2); }
 
-        /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
@@ -100,16 +88,31 @@
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
         
-        /* Hero Specific Styles */
+        /* Profile Frame */
         .profile-frame { position: relative; padding: 4px; background: linear-gradient(135deg, #10b981, #059669, #10b981); border-radius: 9999px; animation: rotate-border 4s linear infinite; }
         .profile-frame::before { content: ''; position: absolute; inset: -4px; background: linear-gradient(135deg, #10b981, transparent, #10b981); border-radius: 9999px; filter: blur(12px); opacity: 0.6; z-index: -1; animation: pulse-blur 3s ease-in-out infinite; }
         
         @keyframes rotate-border { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes pulse-blur { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
         
-        .profile-image-container { position: relative; width: 280px; height: 280px; border-radius: 9999px; overflow: hidden; background: #020617; }
-        @media (min-width: 640px) { .profile-image-container { width: 320px; height: 320px; } }
-        @media (min-width: 1024px) { .profile-image-container { width: 380px; height: 380px; } }
+        /* ===== PROFILE IMAGE - RESPONSIVE ===== */
+        .profile-image-container {
+            position: relative;
+            width: 160px;   /* Mobile: kecil */
+            height: 160px;
+            border-radius: 9999px;
+            overflow: hidden;
+            background: #020617;
+        }
+        @media (min-width: 480px) {
+            .profile-image-container { width: 200px; height: 200px; }
+        }
+        @media (min-width: 640px) {
+            .profile-image-container { width: 240px; height: 240px; }
+        }
+        @media (min-width: 1024px) {
+            .profile-image-container { width: 360px; height: 360px; }
+        }
         
         .skill-tag { padding: 0.625rem 1.25rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 9999px; font-size: 0.875rem; color: #cbd5e1; transition: all 0.3s ease; cursor: default; }
         .skill-tag:hover { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.5); color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); transform: translateY(-2px); }
@@ -130,30 +133,9 @@
         @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(3deg); } }
         
         .gradient-text { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; z-index: -1; max-width: 100vw; pointer-events: none; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; z-index: -1; pointer-events: none; }
 
-        /* Mobile Fixes */
-        @media (max-width: 768px) {
-            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .grid-bg {
-                background-size: 30px 30px;
-            }
-            
-            .skill-tag {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .float {
-                animation: none;
-            }
-        }
-
-        /* Tambahkan CSS ini di bagian style */
+        /* ===== SKILL ITEMS ===== */
         .skill-item {
             display: inline-flex;
             align-items: center;
@@ -167,27 +149,8 @@
             transition: all 0.3s ease;
             cursor: default;
         }
-
-        .skill-item i, .skill-item svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: rgba(16, 185, 129, 0.5);
-            color: #10b981;
-            transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
-        }
-
-        .skill-item:hover i, .skill-item:hover svg {
-            transform: scale(1.1);
-            color: #10b981;
-        }
-
-        /* Warna spesifik untuk ikon brand */
+        .skill-item i, .skill-item svg { width: 1.2rem; height: 1.2rem; transition: all 0.3s ease; }
+        .skill-item:hover { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.5); color: #10b981; transform: translateY(-2px); box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
         .skill-item .fa-html5 { color: #E34F26; }
         .skill-item .fa-css3-alt { color: #1572B6; }
         .skill-item .fa-js { color: #F7DF1E; }
@@ -198,131 +161,294 @@
         .skill-item .fa-ubuntu { color: #E95420; }
         .skill-item .fa-git-alt { color: #F05032; }
         .skill-item .fa-github { color: #FFFFFF; }
-        .skill-item .fa-mysql { color: #4479A1; }
-        .skill-item .fa-vscode { color: #007ACC; }
 
-        /* Hover effect untuk ikon */
-        .skill-item:hover .fa-html5 { color: #ff6b3d; }
-        .skill-item:hover .fa-css3-alt { color: #2b8cff; }
-        .skill-item:hover .fa-js { color: #ffd966; }
-        .skill-item:hover .fa-react { color: #8ad0ff; }
-        .skill-item:hover .fa-laravel { color: #ff5f4a; }
+        /* ===== MOBILE HERO LAYOUT ===== */
+        /* 
+         * Mobile layout:
+         * [ foto ] [ nama + subtitle ]
+         * [ deskripsi penuh - full width ]
+         * [ tombol ]
+         * [ stats ]
+         */
+        @media (max-width: 1023px) {
+            /* Wrapper pakai CSS grid: 2 kolom di atas, full-width di bawah */
+            .hero-inner {
+                display: grid !important;
+                grid-template-columns: auto 1fr !important;
+                grid-template-rows: auto auto auto auto !important;
+                column-gap: 0.625rem !important;
+                row-gap: 0 !important;
+                align-items: start !important;
+                text-align: left !important;
+            }
 
-        /* Alternatif tampilan dengan card */
-.skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.5rem 0.5rem;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    cursor: default;
-}
+            /* Foto: kolom 1, baris 1, membentang 1 baris */
+            .hero-image-col {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                order: unset !important;
+                align-self: start !important;
+            }
 
-.skill-card i, .skill-card svg {
-    font-size: 2rem;
-    width: 2rem;
-    height: 2rem;
-    transition: all 0.3s ease;
-}
+            /* Teks (nama, subtitle, badge): kolom 2, baris 1 */
+            .hero-text-col {
+                grid-column: 2 !important;
+                grid-row: 1 !important;
+                order: unset !important;
+                text-align: left !important;
+            }
 
-.skill-card span {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    text-align: center;
-}
+            /* Sembunyikan elemen dekoratif floating */
+            .hero-deco { display: none !important; }
 
-.skill-card:hover {
-    background: rgba(16, 185, 129, 0.1);
-    border-color: rgba(16, 185, 129, 0.5);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -10px rgba(16, 185, 129, 0.3);
-}
+            /* Status badge */
+            .status-badge {
+                font-size: 0.7rem !important;
+                padding: 0.2rem 0.6rem !important;
+                margin-bottom: 0.5rem !important;
+                gap: 0.35rem !important;
+            }
+            .status-dot { width: 6px !important; height: 6px !important; }
 
-.skill-card:hover i, .skill-card:hover svg {
-    transform: scale(1.1);
-    color: #10b981;
-}
+            /* Judul nama */
+            .hero-title {
+                font-size: clamp(1.1rem, 4.5vw, 1.6rem) !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.4rem !important;
+            }
+
+            /* Subtitle typing */
+            .hero-subtitle {
+                font-size: 0.78rem !important;
+                margin-bottom: 0 !important; /* tidak ada margin, konten lanjutan akan di bawah */
+            }
+
+            /* Sembunyikan deskripsi & tombol & stats dari dalam hero-text-col,
+               kita pindahkan ke full-width row lewat elemen wrapper baru */
+            .hero-desc,
+            .hero-btns,
+            .hero-stats {
+                /* di mobile, elemen ini berada di dalam hero-text-col tapi kita
+                   akan override grid placement-nya agar span 2 kolom */
+                grid-column: 1 / -1 !important;
+            }
+        }
+
+        /* Untuk layar kecil, buat elemen bawah span full width */
+        @media (max-width: 1023px) {
+            .hero-desc {
+                font-size: 0.82rem !important;
+                line-height: 1.55 !important;
+                margin-top: 0.75rem !important;
+                margin-bottom: 0.75rem !important;
+                max-width: 100% !important;
+            }
+
+            .hero-btns {
+                gap: 0.5rem !important;
+                margin-bottom: 0.75rem !important;
+                margin-top: 0 !important;
+            }
+
+            .hero-btns .btn-nav {
+                padding: 0.45rem 1rem !important;
+                font-size: 0.78rem !important;
+            }
+
+            .hero-btns .btn-secondary {
+                padding: 0.45rem 1rem !important;
+                font-size: 0.78rem !important;
+            }
+
+            .hero-stats {
+                gap: 1rem !important;
+                max-width: 100% !important;
+                margin-top: 0 !important;
+            }
+
+            .hero-stats .stat-num {
+                font-size: 1.3rem !important;
+            }
+
+            .hero-stats .stat-label {
+                font-size: 0.65rem !important;
+            }
+
+            /* Badge di bawah foto profil */
+            .profile-badge {
+                bottom: -4px !important;
+            }
+            .profile-badge div {
+                padding: 0.2rem 0.5rem !important;
+            }
+            .profile-badge span {
+                font-size: 0.6rem !important;
+            }
+        }
+
+        /* Sangat kecil (< 380px) */
+        @media (max-width: 380px) {
+            .profile-image-container { width: 110px !important; height: 110px !important; }
+            .hero-title { font-size: 1rem !important; }
+            .hero-subtitle { font-size: 0.72rem !important; }
+        }
+
+        /* ===== PROJECT CARDS MOBILE ===== */
+        @media (max-width: 767px) {
+            /* Grid 2 kolom di mobile */
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+
+            /* Rasio gambar lebih kecil */
+            .projects-grid .aspect-video {
+                aspect-ratio: 4/3 !important;
+            }
+
+            /* Padding card lebih kecil */
+            .projects-grid .p-6 {
+                padding: 0.75rem !important;
+            }
+
+            .projects-grid h3 {
+                font-size: 0.75rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .projects-grid p {
+                font-size: 0.7rem !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                margin-bottom: 0 !important;
+            }
+
+            /* Tech badges di gambar lebih kecil */
+            .projects-grid .absolute.bottom-3 span {
+                font-size: 0.6rem !important;
+                padding: 0.125rem 0.4rem !important;
+            }
+
+            /* Card "lihat semua" lebih compact */
+            .projects-grid .card-glow.flex {
+                min-height: 0 !important;
+            }
+
+            .projects-grid .card-glow.flex .w-20 {
+                width: 2.5rem !important;
+                height: 2.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .projects-grid .card-glow.flex .w-10 {
+                width: 1.25rem !important;
+                height: 1.25rem !important;
+            }
+
+            .projects-grid .card-glow.flex h3 {
+                font-size: 0.75rem !important;
+            }
+
+            .projects-grid .card-glow.flex p {
+                font-size: 0.65rem !important;
+            }
+
+            .projects-grid .card-glow.flex > div {
+                padding: 1rem 0.5rem !important;
+            }
+        }
+
+        /* Skills section mobile */
+        @media (max-width: 767px) {
+            .skill-item {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .grid-bg { background-size: 30px 30px; }
+            .float { animation: none; }
+        }
     </style>
 </head>
 <body class="grid-bg">
     <!-- Navbar Container -->
     <div id="navbar"></div>
 
-    <!-- MAIN CONTENT -->
     <main class="relative min-h-screen">
-        <!-- Decorative Blobs -->
-        <div class="blob w-96 h-96 bg-emerald-500 top-20 -left-48 animate-pulse"></div>
-        <div class="blob w-80 h-80 bg-emerald-600 bottom-20 -right-40 animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="blob w-96 h-96 bg-emerald-500 top-20 -left-48 animate-pulse" style="max-width:50vw;"></div>
+        <div class="blob w-80 h-80 bg-emerald-600 bottom-20 -right-40 animate-pulse" style="animation-delay: 1s; max-width:50vw;"></div>
         
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        <section class="relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-8 lg:min-h-screen lg:pt-20 lg:pb-12">
             <div class="max-w-6xl mx-auto w-full">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Desktop: grid 2 kolom | Mobile: CSS grid foto-kiri teks-kanan, lanjutan full-width -->
+                <div class="hero-inner lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
                     
-                    <!-- Left Content -->
-                    <div class="order-2 lg:order-1 text-center lg:text-left">
-                        <div class="reveal status-badge mb-6">
+                    <!-- [DESKTOP COL 1 / MOBILE: nama+subtitle di kanan foto] -->
+                    <div class="hero-text-col lg:order-1">
+                        <div class="reveal status-badge mb-3 lg:mb-6 inline-flex">
                             <span class="status-dot"></span>
                             <span>Terbuka untuk proyek baru</span>
                         </div>
                         
-                        <h1 class="reveal reveal-delay-1 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-4 leading-tight">
+                        <h1 class="hero-title reveal reveal-delay-1 font-display font-bold text-slate-100 mb-2 lg:mb-4 leading-tight" style="font-size: clamp(1.5rem, 4vw, 3.75rem);">
                             Halo, Saya<br>
                             <span class="gradient-text">Muhammad Rendy Fahrezi</span>
                         </h1>
                         
-                        <div class="reveal reveal-delay-2 flex items-center justify-center lg:justify-start gap-2 mb-6">
-                            <span class="text-slate-400 text-lg">Saya seorang</span>
-                            <span class="typing-text text-emerald-400 text-lg font-medium"></span>
+                        <div class="hero-subtitle reveal reveal-delay-2 flex items-center gap-2 lg:mb-6">
+                            <span class="text-slate-400">Saya seorang</span>
+                            <span class="typing-text text-emerald-400 font-medium"></span>
                         </div>
-                        
-                        <p class="reveal reveal-delay-3 text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+
+                        <!-- Deskripsi, tombol, stats: HANYA tampil di desktop (lg+) -->
+                        <p class="hidden lg:block reveal reveal-delay-3 text-slate-400 text-lg leading-relaxed mb-8 max-w-lg">
                             Digital Craftsman yang fokus menciptakan website modern, 
                             responsif, dan berkinerja tinggi. Siswa RPL yang terus berkembang dan belajar.
                         </p>
                         
-                        <div class="reveal reveal-delay-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12">
+                        <div class="hidden lg:flex reveal reveal-delay-4 flex-wrap items-center gap-4 mb-12">
                             <a href="portofolio.html" class="btn-nav group">
-                                <span>Lihat Karya Saya</span>
+                                <span>Lihat Karya</span>
                                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
                             </a>
-                            <a href="about.html" class="px-5 py-2.5 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 text-sm font-medium">
+                            <a href="about.html" class="px-4 py-2 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 text-sm font-medium">
                                 Tentang Saya
                             </a>
                         </div>
                         
-                        <div class="reveal reveal-delay-4 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
-                            <div class="text-center lg:text-left">
+                        <div class="hidden lg:grid reveal reveal-delay-4 grid-cols-3 gap-6 max-w-md">
+                            <div>
                                 <div class="font-display text-3xl font-bold text-emerald-400">2+</div>
                                 <div class="text-slate-500 text-sm">Proyek Selesai</div>
                             </div>
-                            <div class="text-center lg:text-left">
+                            <div>
                                 <div class="font-display text-3xl font-bold text-emerald-400">2+</div>
                                 <div class="text-slate-500 text-sm">Tahun Belajar</div>
                             </div>
-                            <div class="text-center lg:text-left">
+                            <div>
                                 <div class="font-display text-3xl font-bold text-emerald-400">15+</div>
                                 <div class="text-slate-500 text-sm">Teknologi</div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Right Content - Profile Image -->
-                    <div class="order-1 lg:order-2 flex justify-center">
+                    <!-- [DESKTOP COL 2 / MOBILE COL 1] Foto profil -->
+                    <div class="hero-image-col lg:order-2 flex justify-center">
                         <div class="reveal relative">
-                            <!-- Floating Decorative Elements -->
-                            <div class="absolute -top-6 -right-6 w-28 h-28 border border-emerald-500/30 rounded-2xl float" style="animation-delay: 0s;"></div>
-                            <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-xl float" style="animation-delay: 1s;"></div>
-                            <div class="absolute top-1/3 -right-10 w-4 h-4 bg-emerald-500 rounded-full float shadow-lg shadow-emerald-500/50" style="animation-delay: 2s;"></div>
-                            <div class="absolute bottom-1/4 -left-8 w-3 h-3 bg-emerald-400 rounded-full float shadow-lg shadow-emerald-400/50" style="animation-delay: 1.5s;"></div>
+                            <div class="hero-deco absolute -top-6 -right-6 w-28 h-28 border border-emerald-500/30 rounded-2xl float"></div>
+                            <div class="hero-deco absolute -bottom-6 -left-6 w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-xl float" style="animation-delay: 1s;"></div>
+                            <div class="hero-deco absolute top-1/3 -right-10 w-4 h-4 bg-emerald-500 rounded-full float shadow-lg shadow-emerald-500/50" style="animation-delay: 2s;"></div>
+                            <div class="hero-deco absolute bottom-1/4 -left-8 w-3 h-3 bg-emerald-400 rounded-full float shadow-lg shadow-emerald-400/50" style="animation-delay: 1.5s;"></div>
                             
-                            <!-- Profile Photo -->
                             <div class="profile-frame">
                                 <div class="profile-image-container">
                                     <img 
@@ -334,169 +460,110 @@
                                 </div>
                             </div>
                             
-                            <!-- Floating Badge -->
-                            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 z-10">
-                                <div class="px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-emerald-500/30 rounded-full shadow-lg">
-                                    <span class="text-emerald-400 text-sm font-medium">Web Developer</span>
+                            <div class="profile-badge absolute -bottom-2 left-1/2 -translate-x-1/2 z-10">
+                                <div class="px-3 py-1.5 bg-slate-900/90 backdrop-blur-sm border border-emerald-500/30 rounded-full shadow-lg whitespace-nowrap">
+                                    <span class="text-emerald-400 text-xs font-medium">Web Developer</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- [MOBILE ONLY] Deskripsi + tombol + stats — full width, di bawah foto & nama -->
+                    <div class="lg:hidden" style="grid-column: 1 / -1; padding-top: 1rem;">
+                        <p class="reveal reveal-delay-3 text-slate-400 leading-relaxed mb-5" style="font-size: 0.875rem; line-height: 1.65;">
+                            Digital Craftsman yang fokus menciptakan website modern, 
+                            responsif, dan berkinerja tinggi. Siswa RPL yang terus berkembang dan belajar.
+                        </p>
+                        
+                        <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-3 mb-6">
+                            <a href="portofolio.html" class="btn-nav group" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+                                <span>Lihat Karya</span>
+                                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            <a href="about.html" class="px-3.5 py-2 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 font-medium" style="font-size: 0.8rem;">
+                                Tentang Saya
+                            </a>
+                        </div>
+                        
+                        <div class="reveal reveal-delay-4 grid grid-cols-3 gap-4 pb-2">
+                            <div>
+                                <div class="font-display font-bold text-emerald-400 text-xl">2+</div>
+                                <div class="text-slate-500" style="font-size: 0.7rem;">Proyek Selesai</div>
+                            </div>
+                            <div>
+                                <div class="font-display font-bold text-emerald-400 text-xl">2+</div>
+                                <div class="text-slate-500" style="font-size: 0.7rem;">Tahun Belajar</div>
+                            </div>
+                            <div>
+                                <div class="font-display font-bold text-emerald-400 text-xl">15+</div>
+                                <div class="text-slate-500" style="font-size: 0.7rem;">Teknologi</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
         
-        <!-- Skills Section dengan Logo -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <!-- Skills Section -->
+        <section class="py-8 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
             <div class="max-w-6xl mx-auto">
-                <div class="reveal text-center mb-12">
+                <div class="reveal text-center mb-6 lg:mb-12">
                     <span class="text-emerald-400 text-sm font-medium tracking-wider uppercase">Keahlian</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-100 mt-2 mb-4">Tech Stack</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Teknologi dan tools yang saya gunakan untuk membangun solusi digital</p>
+                    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-100 mt-2 mb-3">Tech Stack</h2>
+                    <p class="text-slate-400 text-sm lg:text-base max-w-2xl mx-auto">Teknologi dan tools yang saya gunakan untuk membangun solusi digital</p>
                 </div>
                 
-                <div class="reveal reveal-delay-1 flex flex-wrap justify-center gap-3">
-                    <!-- HTML5 -->
+                <div class="reveal reveal-delay-1 flex flex-wrap justify-center gap-2 lg:gap-3">
+                    <span class="skill-item"><i class="fab fa-html5"></i>HTML5</span>
+                    <span class="skill-item"><i class="fab fa-css3-alt"></i>CSS3</span>
+                    <span class="skill-item"><i class="fab fa-js"></i>JavaScript</span>
+                    <span class="skill-item"><i class="fab fa-php"></i>PHP</span>
+                    <span class="skill-item"><i class="fab fa-react"></i>React</span>
                     <span class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        HTML5
-                    </span>
-                    
-                    <!-- CSS3 -->
-                    <span class="skill-item">
-                        <i class="fab fa-css3-alt"></i>
-                        CSS3
-                    </span>
-                    
-                    <!-- JavaScript -->
-                    <span class="skill-item">
-                        <i class="fab fa-js"></i>
-                        JavaScript
-                    </span>
-                    
-                    <!-- PHP -->
-                    <span class="skill-item">
-                        <i class="fab fa-php"></i>
-                        PHP
-                    </span>
-                    
-                    <!-- React -->
-                    <span class="skill-item">
-                        <i class="fab fa-react"></i>
-                        React
-                    </span>
-                    
-                    <!-- Next.js (pakai custom) -->
-                    <span class="skill-item">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem; height:1.2rem;">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem;height:1.2rem;">
                             <path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.941V9.251l8.646 10.026c.312-.234.604-.486.878-.754V7.2h-1.848v9.13l1.848 2.148v.5h.001z"/>
                         </svg>
                         Next.js
                     </span>
-                    
-                    <!-- Laravel -->
+                    <span class="skill-item"><i class="fab fa-laravel"></i>Laravel</span>
                     <span class="skill-item">
-                        <i class="fab fa-laravel"></i>
-                        Laravel
-                    </span>
-                    
-                    <!-- Tailwind CSS -->
-                    <span class="skill-item">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem; height:1.2rem;">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem;height:1.2rem;">
                             <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/>
                         </svg>
                         Tailwind
                     </span>
-                    
-                    <!-- Bootstrap -->
+                    <span class="skill-item"><i class="fab fa-bootstrap"></i>Bootstrap</span>
+                    <span class="skill-item"><i class="fab fa-ubuntu"></i>Ubuntu</span>
+                    <span class="skill-item"><i class="fas fa-server"></i>VPS</span>
+                    <span class="skill-item"><i class="fas fa-robot"></i>AI Tools</span>
+                    <span class="skill-item"><i class="fab fa-git-alt"></i>Git</span>
+                    <span class="skill-item"><i class="fab fa-github"></i>GitHub</span>
+                    <span class="skill-item"><i class="fas fa-globe"></i>Apache</span>
+                    <span class="skill-item"><i class="fas fa-database"></i>MySQL</span>
                     <span class="skill-item">
-                        <i class="fab fa-bootstrap"></i>
-                        Bootstrap
-                    </span>
-                    
-                    <!-- Ubuntu -->
-                    <span class="skill-item">
-                        <i class="fab fa-ubuntu"></i>
-                        Ubuntu
-                    </span>
-                    
-                    <!-- VPS Management (custom icon) -->
-                    <span class="skill-item">
-                        <i class="fas fa-server"></i>
-                        VPS
-                    </span>
-                    
-                    <!-- AI Tools -->
-                    <span class="skill-item">
-                        <i class="fas fa-robot"></i>
-                        AI Tools
-                    </span>
-                    
-                    <!-- Git -->
-                    <span class="skill-item">
-                        <i class="fab fa-git-alt"></i>
-                        Git
-                    </span>
-                    
-                    <!-- GitHub -->
-                    <span class="skill-item">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </span>
-                    
-                    <!-- Apache -->
-                    <span class="skill-item">
-                        <i class="fas fa-globe"></i>
-                        Apache
-                    </span>
-                    
-                    <!-- MySQL -->
-                    <span class="skill-item">
-                        <i class="fas fa-database"></i>
-                        MySQL
-                    </span>
-                    
-                    <!-- Supabase -->
-                    <span class="skill-item">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem; height:1.2rem;">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="width:1.2rem;height:1.2rem;">
                             <path d="M21.362 9.354H12V.006h9.362c.653 0 .983.642.983 1.172v6.998c0 .53-.33 1.178-.983 1.178zM12 21.634V9.354h9.362v11.108c0 .652-.33 1.172-.983 1.172H12zM2.638 21.634H12v-9.354H2.638c-.653 0-.983.53-.983 1.172v6.998c0 .642.33 1.184.983 1.184zM2.638 9.354H12V.006H2.638c-.653 0-.983.642-.983 1.172v6.998c0 .53.33 1.178.983 1.178z"/>
                         </svg>
                         Supabase
                     </span>
-                    
-                    <!-- VS Code -->
-                    <span class="skill-item">
-                        <i class="fas fa-code"></i>
-                        VS Code
-                    </span>
-                    
-                    <!-- XAMPP -->
-                    <span class="skill-item">
-                        <i class="fas fa-layer-group"></i>
-                        XAMPP
-                    </span>
+                    <span class="skill-item"><i class="fas fa-code"></i>VS Code</span>
+                    <span class="skill-item"><i class="fas fa-layer-group"></i>XAMPP</span>
                 </div>
-                
-                <!-- Atau bisa juga dengan tampilan grid yang lebih rapi -->
-                <!-- <div class="reveal reveal-delay-1 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-                    <div class="skill-card">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML5</span>
-                    </div>
-                    ...
-                </div> -->
             </div>
         </section>
         
         <!-- Featured Projects -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/30">
+        <section class="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/30">
             <div class="max-w-6xl mx-auto">
-                <div class="reveal flex items-center justify-between mb-12 flex-wrap gap-4">
+                <div class="reveal flex items-center justify-between mb-8 lg:mb-12 flex-wrap gap-4">
                     <div>
                         <span class="text-emerald-400 text-sm font-medium tracking-wider uppercase">Portfolio</span>
-                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-100 mt-2">Proyek Unggulan</h2>
+                        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-100 mt-1 lg:mt-2">Proyek Unggulan</h2>
                     </div>
-                    <a href="portofolio.html" class="px-5 py-2.5 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 text-sm font-medium flex items-center gap-2">
+                    <a href="portofolio.html" class="px-4 py-2 border border-emerald-500/50 text-emerald-400 rounded-lg hover:bg-emerald-500/10 transition-all duration-300 text-sm font-medium flex items-center gap-2">
                         <span>Lihat Semua</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -504,174 +571,103 @@
                     </a>
                 </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Project Card 1 - MUA Luxury (dengan gambar) -->
+                <!-- Grid: 2 kolom di mobile, 3 kolom di desktop -->
+                <div class="projects-grid grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6">
+                    
+                    <!-- Project 1 - MUA Luxury -->
                     <a href="https://mua-profile.vercel.app/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 card-glow group cursor-pointer block">
                         <div class="aspect-video bg-slate-800/50 rounded-t-lg overflow-hidden relative">
-                            <!-- Gambar Project -->
                             <img 
                                 src="assets/hero-bg-mua.jpg" 
                                 alt="MUA Luxury Landing Page"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 onerror="this.src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&auto=format&fit=crop'"
                             >
-                            <!-- Overlay Gradient -->
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-                            
-                            <!-- Badge Live Demo -->
-                            <div class="absolute top-3 right-3 bg-emerald-500 text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                                <span>Live Demo</span>
+                            <div class="absolute top-2 right-2 bg-emerald-500 text-slate-900 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                <span class="hidden sm:inline">Live</span>
                             </div>
-                            
-                            <!-- Technology Tags di Gambar (opsional) -->
-                            <div class="absolute bottom-3 left-3 flex gap-2">
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">HTML</span>
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">Tailwind</span>
+                            <div class="absolute bottom-2 left-2 flex gap-1">
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">HTML</span>
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">TW</span>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-display text-lg font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">
-                                    MUA Luxury Landing Page Multi-Halaman
-                                </h3>
-                                <svg class="w-5 h-5 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4">Landing page modern untuk Make Up Artist dengan desain elegan dan responsif. Dilengkapi dengan galeri portofolio dan form booking.</p>
+                        <div class="p-3 lg:p-6">
+                            <h3 class="font-display font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors mb-1 text-sm lg:text-lg leading-tight">
+                                MUA Luxury Landing Page
+                            </h3>
+                            <p class="text-slate-400 text-xs lg:text-sm hidden sm:block">Landing page modern untuk Make Up Artist dengan desain elegan dan responsif.</p>
                         </div>
                     </a>
 
-                    <!-- circle-food -->
-                     <a href="https://circle-food.vercel.app/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 card-glow group cursor-pointer block">
+                    <!-- Project 2 - Circle Food -->
+                    <a href="https://circle-food.vercel.app/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-2 card-glow group cursor-pointer block">
                         <div class="aspect-video bg-slate-800/50 rounded-t-lg overflow-hidden relative">
-                            <!-- Gambar Project -->
                             <img 
                                 src="assets/hero-bg-cf.jpeg" 
-                                alt="MUA Luxury Landing Page"
+                                alt="Circle Food"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                onerror="this.src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&auto=format&fit=crop'"
+                                onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop'"
                             >
-                            <!-- Overlay Gradient -->
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-                            
-                            <!-- Badge Live Demo -->
-                            <div class="absolute top-3 right-3 bg-emerald-500 text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                                <span>Live Demo</span>
+                            <div class="absolute top-2 right-2 bg-emerald-500 text-slate-900 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                <span class="hidden sm:inline">Live</span>
                             </div>
-                            
-                            <!-- Technology Tags di Gambar (opsional) -->
-                            <div class="absolute bottom-3 left-3 flex gap-2">
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">Next.js</span>
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">Tailwind</span>
+                            <div class="absolute bottom-2 left-2 flex gap-1">
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">Next</span>
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">TW</span>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-display text-lg font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">
-                                    Website Company Profile Circle Food
-                                </h3>
-                                <svg class="w-5 h-5 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4">Website profil usaha untuk memeperkenalkan dan mendeskripsikan usaha-mu di dunia internet browser. </p>
+                        <div class="p-3 lg:p-6">
+                            <h3 class="font-display font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors mb-1 text-sm lg:text-lg leading-tight">
+                                Circle Food Company Profile
+                            </h3>
+                            <p class="text-slate-400 text-xs lg:text-sm hidden sm:block">Website profil usaha untuk memperkenalkan dan mendeskripsikan usaha di internet.</p>
                         </div>
                     </a>
 
-                    <!-- codeer -->
-                     <a href="https://code-er.netlify.app/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 card-glow group cursor-pointer block">
+                    <!-- Project 3 - Codeer -->
+                    <a href="https://code-er.netlify.app/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-3 card-glow group cursor-pointer block">
                         <div class="aspect-video bg-slate-800/50 rounded-t-lg overflow-hidden relative">
-                            <!-- Gambar Project -->
                             <img 
                                 src="assets/projects/portfolio-v1.jpg" 
-                                alt="MUA Luxury Landing Page"
+                                alt="Codeer Landing Page"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 onerror="this.src='https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop'"
                             >
-                            <!-- Overlay Gradient -->
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-                            
-                            <!-- Badge Live Demo -->
-                            <div class="absolute top-3 right-3 bg-emerald-500 text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                                <span>Live Demo</span>
+                            <div class="absolute top-2 right-2 bg-emerald-500 text-slate-900 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg flex items-center gap-1">
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                <span class="hidden sm:inline">Live</span>
                             </div>
-                            
-                            <!-- Technology Tags di Gambar (opsional) -->
-                            <div class="absolute bottom-3 left-3 flex gap-2">
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">HTML</span>
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">Tailwind</span>
+                            <div class="absolute bottom-2 left-2 flex gap-1">
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">HTML</span>
+                                <span class="text-xs px-1.5 py-0.5 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">TW</span>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-display text-lg font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">
-                                    Website Landing Page Single-Page (satu halaman)
-                                </h3>
-                                <svg class="w-5 h-5 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4">Contoh Website Landing Page (Satu halaman). </p>
+                        <div class="p-3 lg:p-6">
+                            <h3 class="font-display font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors mb-1 text-sm lg:text-lg leading-tight">
+                                Landing Page Single-Page
+                            </h3>
+                            <p class="text-slate-400 text-xs lg:text-sm hidden sm:block">Contoh Website Landing Page satu halaman yang modern dan responsif.</p>
                         </div>
                     </a>
                     
-                    <!-- Project Card 2 - Personal Portfolio (dengan gambar) -->
-                    <!-- <a href="#" class="reveal reveal-delay-2 card-glow group cursor-pointer block">
-                        <div class="aspect-video bg-slate-800/50 rounded-t-lg overflow-hidden relative">
-                            <img 
-                                src="assets/projects/portfolio-v1.jpg" 
-                                alt="Personal Portfolio V1"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                onerror="this.src='https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop'"
-                            >
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div> -->
-                            
-                            <!-- Coming Soon Badge (karena belum ada link) -->
-                            <!-- <div class="absolute top-3 right-3 bg-slate-800/90 backdrop-blur-sm text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-slate-600">
-                                Coming Soon
-                            </div>
-                            
-                            <div class="absolute bottom-3 left-3 flex gap-2">
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">HTML</span>
-                                <span class="text-xs px-2 py-1 bg-slate-900/80 backdrop-blur-sm border border-emerald-500/30 rounded text-emerald-400">CSS</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-display text-lg font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">
-                                    Personal Portfolio V1
-                                </h3>
-                                <span class="text-xs text-slate-500">(Dalam Pengembangan)</span>
-                            </div>
-                            <p class="text-slate-400 text-sm">Website portfolio personal pertama dengan tema gelap dan minimalis. Menampilkan proyek dan skill.</p>
-                        </div>
-                    </a> -->
-                    
-                    <!-- Project Card 3 - More Projects -->
-                    <a href="portofolio.html" class="reveal reveal-delay-3 card-glow group cursor-pointer flex items-center justify-center min-h-[300px]">
-                        <div class="text-center p-6">
-                            <div class="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:bg-emerald-500/20">
-                                <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Card: Lihat Semua -->
+                    <a href="portofolio.html" class="reveal reveal-delay-4 card-glow group cursor-pointer flex items-center justify-center" style="min-height: 160px;">
+                        <div class="text-center p-4 lg:p-6">
+                            <div class="w-10 h-10 lg:w-20 lg:h-20 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-2 lg:mb-4 group-hover:scale-110 transition-transform group-hover:bg-emerald-500/20">
+                                <svg class="w-5 h-5 lg:w-10 lg:h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                                 </svg>
                             </div>
-                            <h3 class="font-display text-xl font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors mb-2">Lihat Semua Proyek</h3>
-                            <p class="text-slate-400 text-sm">10+ proyek lainnya menanti untuk dilihat</p>
-                            <div class="mt-4 text-emerald-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                            <h3 class="font-display font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors text-sm lg:text-xl mb-1">Lihat Semua</h3>
+                            <p class="text-slate-400 text-xs lg:text-sm">10+ proyek lainnya</p>
+                            <div class="mt-2 text-emerald-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
                                 <span>Jelajahi</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                                </svg>
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </div>
                         </div>
                     </a>
@@ -680,25 +676,25 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <section class="py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal relative overflow-hidden rounded-2xl p-8 sm:p-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50">
+                <div class="reveal relative overflow-hidden rounded-2xl p-6 sm:p-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
                     <div class="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-2xl"></div>
                     
                     <div class="relative text-center">
-                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-100 mb-4">Punya Ide Proyek?</h2>
-                        <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                        <h2 class="font-display text-xl sm:text-3xl font-bold text-slate-100 mb-3 lg:mb-4">Punya Ide Proyek?</h2>
+                        <p class="text-slate-400 text-sm lg:text-base mb-6 lg:mb-8 max-w-xl mx-auto">
                             Saya selalu terbuka untuk diskusi dan kolaborasi. Mari wujudkan ide Anda menjadi kenyataan.
                         </p>
-                        <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex flex-wrap justify-center gap-3 lg:gap-4">
                             <a href="contact.html" class="btn-nav group">
                                 <span>Mulai Diskusi</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                                 </svg>
                             </a>
-                            <a href="services.html" class="px-5 py-2.5 border border-slate-600 text-slate-300 rounded-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300 text-sm font-medium">
+                            <a href="services.html" class="px-4 py-2.5 border border-slate-600 text-slate-300 rounded-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300 text-sm font-medium">
                                 Lihat Layanan
                             </a>
                         </div>
@@ -708,17 +704,15 @@
         </section>
     </main>
 
-    <!-- Footer Container -->
     <div id="footer"></div>
 
-    <!-- Scripts -->
     <script src="js/components.js"></script>
     <script>
         // Typing Animation
         const typingElement = document.querySelector('.typing-text');
         if (typingElement) {
             const words = ['Web Developer', 'Digital Craftsman', 'UI/UX Enthusiast', 'Pecah Kode'];
-            let wordIndex = 0; let charIndex = 0; let isDeleting = false;
+            let wordIndex = 0, charIndex = 0, isDeleting = false;
 
             function type() {
                 const currentWord = words[wordIndex % words.length];
@@ -729,11 +723,17 @@
                 if (isDeleting) typeSpeed = 50;
                 if (!isDeleting && charIndex === currentWord.length) { typeSpeed = 2000; isDeleting = true; }
                 else if (isDeleting && charIndex === 0) { isDeleting = false; wordIndex++; typeSpeed = 500; }
-
                 setTimeout(type, typeSpeed);
             }
             setTimeout(type, 1000);
         }
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('revealed'); });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

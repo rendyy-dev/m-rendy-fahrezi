@@ -6,411 +6,240 @@
     <title>Layanan - Muhammad Rendy Fahrezi</title>
     <meta name="description" content="Layanan pengembangan web, maintenance VPS, dan solusi digital oleh Muhammad Rendy Fahrezi">
     
-    <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'display': ['Space Grotesk', 'sans-serif'],
-                        'body': ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { fontFamily: { 'display': ['Space Grotesk', 'sans-serif'], 'body': ['Inter', 'sans-serif'] } } } }
     </script>
     
     <style>
-        /* Base & Theme Variables */
-        :root {
-            --bg-primary: #020617;
-            --accent: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.4);
-        }
-        
+        :root { --bg-primary: #020617; --accent: #10b981; --accent-glow: rgba(16, 185, 129, 0.4); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: #e2e8f0;
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
-        
-        /* Utility Classes */
-        .glassmorphism {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
-        }
-        
-        .grid-bg {
-            background-image: 
-                linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: #e2e8f0; overflow-x: hidden; width: 100%; position: relative; }
 
-        /* Navigation Styles - Sama persis dengan portofolio.html */
+        .glassmorphism { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
+        .grid-bg { background-image: linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px); background-size: 60px 60px; }
+
         .navbar .glassmorphism { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
         .navbar.scrolled .glassmorphism { background: rgba(15, 23, 42, 0.95); border-bottom-color: rgba(16, 185, 129, 0.2); }
-        
         .nav-link { display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 1rem; color: #94a3b8; font-size: 0.875rem; font-weight: 500; position: relative; transition: all 0.3s ease; border-radius: 0.5rem; }
-        .nav-link::before { content: ''; position: absolute; bottom: 0.25rem; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: linear-gradient(90deg, #10b981, #34d399); border-radius: 2px; transition: width 0.3s ease; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+        .nav-link::before { content: ''; position: absolute; bottom: 0.25rem; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: linear-gradient(90deg, #10b981, #34d399); border-radius: 2px; transition: width 0.3s ease; }
         .nav-link:hover { color: #f1f5f9; background: rgba(16, 185, 129, 0.05); }
         .nav-link:hover::before, .nav-link.active::before { width: 50%; }
         .nav-link.active { color: #10b981; }
-        
         .btn-nav { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; background: linear-gradient(135deg, #059669, #10b981); color: #020617; font-size: 0.875rem; font-weight: 600; border-radius: 0.5rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
         .btn-nav:hover { box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); transform: translateY(-1px); }
-        
         .mobile-nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; color: #94a3b8; font-size: 0.9rem; border-radius: 0.75rem; transition: all 0.3s ease; }
         .mobile-nav-link:hover, .mobile-nav-link.active { color: #10b981; background: rgba(16, 185, 129, 0.1); }
         .mobile-nav-link.active { border-left: 2px solid #10b981; }
 
-        /* Desktop Navigation - Pastikan tampil di desktop */
-        @media (min-width: 769px) {
-            .md\\:flex {
-                display: flex !important;
-            }
-            
-            #mobile-menu {
-                display: none !important;
-            }
-            
-            #mobile-menu-btn {
-                display: none !important;
-            }
-        }
-
-        /* Footer Styles */
         .footer-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: #94a3b8; font-size: 0.875rem; transition: all 0.3s ease; }
         .footer-link:hover { color: #10b981; transform: translateX(4px); }
         .tech-badge { padding: 0.25rem 0.75rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.4); border-radius: 9999px; font-size: 0.7rem; color: #64748b; transition: all 0.3s ease; }
         .tech-badge:hover { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #10b981; }
         .social-btn { width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 0.75rem; color: #94a3b8; transition: all 0.3s ease; }
-        .social-btn:hover { color: #10b981; border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); transform: translateY(-2px); }
+        .social-btn:hover { color: #10b981; border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); transform: translateY(-2px); }
 
-        /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
-        
-        /* Services Specific */
-        .service-card {
-            position: relative;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(51, 65, 85, 0.3);
-            border-radius: 2rem;
-            padding: 2.5rem 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.2);
-        }
-        
-        .service-card:hover::before {
-            opacity: 1;
-        }
-        
-        .service-icon {
-            width: 5rem;
-            height: 5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 1.5rem;
-            margin-bottom: 2rem;
-            color: #10b981;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            background: rgba(16, 185, 129, 0.2);
-            border-color: rgba(16, 185, 129, 0.6);
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .pricing-card {
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
-            border: 1px solid rgba(51, 65, 85, 0.3);
-            border-radius: 2rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .pricing-card:hover::before {
-            opacity: 1;
-        }
-        
-        .pricing-card.featured {
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 20px 40px -20px rgba(16, 185, 129, 0.3);
-            transform: scale(1.02);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(16, 185, 129, 0.5);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.02) translateY(-4px);
-        }
-        
+
+        /* Service Cards */
+        .service-card { position: relative; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.3); border-radius: 1.5rem; padding: 1.75rem 1.5rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; display: flex; flex-direction: column; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent); opacity: 0; transition: opacity 0.3s ease; }
+        .service-card:hover { transform: translateY(-6px); border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 24px 48px -20px rgba(0,0,0,0.5); }
+        .service-card:hover::before { opacity: 1; }
+
+        .service-icon { width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 1rem; margin-bottom: 1.25rem; color: #10b981; transition: all 0.3s ease; flex-shrink: 0; }
+        .service-card:hover .service-icon { background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.6); transform: scale(1.1) rotate(5deg); }
+
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.35rem 0; color: #94a3b8; font-size: 0.875rem; }
+        .feature-list li::before { content: '✓'; color: #10b981; font-weight: bold; font-size: 0.875rem; margin-top: 1px; flex-shrink: 0; }
+
+        /* Pricing Cards */
+        .pricing-card { background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9)); border: 1px solid rgba(51, 65, 85, 0.3); border-radius: 1.5rem; padding: 1.75rem; transition: all 0.3s ease; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent); opacity: 0; transition: opacity 0.3s ease; }
+        .pricing-card:hover::before { opacity: 1; }
+        .pricing-card.featured { border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 40px -20px rgba(16, 185, 129, 0.3); }
+        .pricing-card:hover { transform: translateY(-4px); border-color: rgba(16, 185, 129, 0.5); }
+
+        .popular-badge { position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #059669, #10b981); color: #020617; font-size: 0.7rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 9999px; box-shadow: 0 0 20px rgba(16, 185, 129, 0.5); z-index: 10; }
+        .price-tag { font-size: 2.25rem; font-weight: 700; color: #10b981; line-height: 1.2; }
+        .price-sub { font-size: 0.9rem; color: #64748b; font-weight: normal; }
+
         .float { animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            z-index: -1;
-            max-width: 100vw;
-            pointer-events: none;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-        
-        .feature-list li::before {
-            content: '✓';
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.15; z-index: -1; max-width: 100vw; pointer-events: none; }
 
-        .price-tag {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #10b981;
-            line-height: 1.2;
+        /* Swipe arrows animation */
+        @keyframes swipe-bounce {
+            0%, 100% { transform: translateX(0); opacity: 0.6; }
+            50% { transform: translateX(3px); opacity: 1; }
         }
+        .swipe-arrow:last-of-type { animation: swipe-bounce 1.2s ease-in-out infinite; }
+        .swipe-arrow:first-of-type { animation: swipe-bounce 1.2s ease-in-out infinite reverse; }
 
-        .price-sub {
-            font-size: 1rem;
-            color: #64748b;
-            font-weight: normal;
-        }
-
-        /* Badge populer */
-        .popular-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: linear-gradient(135deg, #059669, #10b981);
-            color: #020617;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.375rem 1rem;
+        /* Custom scrollbar pricing */
+        .scroll-track {
+            height: 4px;
+            background: rgba(51, 65, 85, 0.4);
             border-radius: 9999px;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
-            z-index: 20;
+            overflow: hidden;
+        }
+        .scroll-thumb {
+            height: 100%;
+            background: linear-gradient(90deg, #059669, #10b981);
+            border-radius: 9999px;
+            width: 33%;
+            transform: translateX(0%);
+            transition: transform 0.1s ease;
         }
 
-        /* Fix overflow issues */
-        body {
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
+        /* ===== MOBILE STYLES ===== */
+        @media (max-width: 767px) {
+            .grid-bg { background-size: 30px 30px; }
+            .float { animation: none; }
 
-        .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
+            /* Header compact */
+            .services-header h1 { font-size: 2rem !important; }
+            .services-header p { font-size: 0.9rem !important; }
+            .services-header { margin-bottom: 2rem !important; }
 
-        .blob {
-            max-width: 100vw;
-            pointer-events: none;
-        }
-
-        /* Mobile menu button - Default hidden */
-        #mobile-menu-btn {
-            display: none;
-            z-index: 100;
-        }
-
-        #mobile-menu-btn svg {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        #mobile-menu {
-            position: fixed;
-            top: 64px;
-            left: 0;
-            right: 0;
-            max-height: calc(100vh - 64px);
-            overflow-y: auto;
-            z-index: 50;
-            background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
-
-        #mobile-menu.hidden {
-            display: none;
-        }
-
-        /* Mobile layout */
-        @media (max-width: 768px) {
-            .grid-bg {
-                background-size: 30px 30px;
+            /* Service grid: 1 kolom di mobile */
+            .services-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.875rem !important;
             }
-            
-            /* Tampilkan mobile menu button */
-            #mobile-menu-btn {
-                display: block !important;
-            }
-            
-            /* Sembunyikan desktop navigation */
-            .md\\:flex {
-                display: none !important;
-            }
-            
-            /* Service cards di mobile */
-            .service-card, .pricing-card {
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-            }
-            
+
+            /* Service card horizontal di mobile: icon kiri, teks kanan */
             .service-card {
-                padding: 2rem 1.5rem;
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 1rem !important;
+                padding: 1.25rem !important;
+                border-radius: 1.25rem !important;
             }
-            
-            .float {
-                animation: none;
+            .service-card:hover { transform: none; }
+
+            .service-icon {
+                width: 2.75rem !important;
+                height: 2.75rem !important;
+                min-width: 2.75rem !important;
+                border-radius: 0.75rem !important;
+                margin-bottom: 0 !important;
+            }
+            .service-icon svg {
+                width: 1.25rem !important;
+                height: 1.25rem !important;
             }
 
-            #mobile-menu {
-                top: 64px;
-                left: 0;
-                right: 0;
-                max-height: calc(100vh - 64px);
-                overflow-y: auto;
-                z-index: 40;
-                background: rgba(15, 23, 42, 0.98);
-                backdrop-filter: blur(10px);
+            .service-card-body { flex: 1; min-width: 0; }
+            .service-card-body h3 { font-size: 1rem !important; margin-bottom: 0.375rem !important; }
+            .service-card-body > p { font-size: 0.8rem !important; margin-bottom: 0.75rem !important; line-height: 1.5 !important; }
+            .service-card-body .feature-list { display: none; }
+            .service-card-body .service-link { font-size: 0.8rem !important; margin-top: 0 !important; }
+
+            /* Pricing: horizontal scroll di mobile */
+            .pricing-grid-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 0 -1rem;
+                padding: 0 1rem 1rem;
+                /* Scrollbar visible */
+                scrollbar-width: thin;
+                scrollbar-color: rgba(16, 185, 129, 0.5) rgba(30, 41, 59, 0.4);
+            }
+            .pricing-grid-wrapper::-webkit-scrollbar {
+                height: 5px;
+            }
+            .pricing-grid-wrapper::-webkit-scrollbar-track {
+                background: rgba(30, 41, 59, 0.4);
+                border-radius: 9999px;
+                margin: 0 1rem;
+            }
+            .pricing-grid-wrapper::-webkit-scrollbar-thumb {
+                background: linear-gradient(90deg, #059669, #10b981);
+                border-radius: 9999px;
             }
 
-            #mobile-menu.hidden {
-                display: none;
+            @keyframes bounce-x {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(5px); }
+            }
+            .animate-bounce-x { animation: bounce-x 1s ease-in-out infinite; }
+
+            .pricing-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                gap: 0.875rem !important;
+                width: max-content !important;
             }
 
-            .pricing-card.featured {
-                transform: scale(1);
+            .pricing-grid > div {
+                width: 72vw !important;
+                max-width: 280px !important;
+                min-width: 240px !important;
+                flex-shrink: 0 !important;
             }
 
-            .pricing-card.featured:hover {
-                transform: translateY(-4px);
+            .pricing-card {
+                padding: 1.25rem !important;
+                border-radius: 1.25rem !important;
+                height: 100% !important;
+            }
+            .pricing-card.featured { transform: none !important; }
+            .pricing-card.featured:hover { transform: translateY(-4px) !important; }
+
+            .pricing-card .text-center .text-5xl {
+                font-size: 2rem !important;
             }
 
-            .price-tag {
-                font-size: 2rem;
-            }
+            .price-tag { font-size: 1.875rem !important; }
+
+            /* Pricing: tampilkan fitur tapi lebih compact */
+            .feature-list li { font-size: 0.8rem !important; padding: 0.25rem 0 !important; }
+
+            /* FAQ compact */
+            .faq-item { padding: 1rem !important; border-radius: 1rem !important; }
+            .faq-item h3 { font-size: 0.95rem !important; }
+            .faq-item p { font-size: 0.82rem !important; }
+
+            /* CTA compact */
+            .cta-section { padding: 2rem 1.25rem !important; border-radius: 1.5rem !important; }
+            .cta-section h2 { font-size: 1.5rem !important; }
+            .cta-section p { font-size: 0.875rem !important; }
         }
 
-        /* Harga start dari */
-        .price-start {
-            font-size: 1rem;
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
-            display: block;
+        /* Tablet: 2 kolom service */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .pricing-grid { grid-template-columns: 1fr !important; max-width: 480px; margin: 0 auto; }
         }
     </style>
 </head>
 <body class="grid-bg">
-    <!-- Navbar Container -->
     <div id="navbar"></div>
 
-    <!-- MAIN CONTENT -->
-    <main class="relative min-h-screen pt-24 pb-20">
-        <!-- Decorative Blobs -->
+    <main class="relative pt-20 pb-16 lg:pt-24 lg:pb-20">
         <div class="blob w-[500px] h-[500px] bg-emerald-500 top-40 left-20 animate-pulse"></div>
         <div class="blob w-96 h-96 bg-emerald-600 bottom-40 right-20 animate-pulse" style="animation-delay: 1s;"></div>
-        
-        <!-- Header Section -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-20">
-            <div class="max-w-4xl mx-auto text-center">
+
+        <!-- Header -->
+        <section class="px-4 sm:px-6 lg:px-8 mb-10 lg:mb-20">
+            <div class="max-w-4xl mx-auto text-center services-header">
                 <div class="reveal">
-                    <span class="text-emerald-400 text-sm font-medium tracking-wider uppercase">Layanan</span>
-                    <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-100 mt-4 mb-6">
+                    <span class="text-emerald-400 text-xs lg:text-sm font-medium tracking-wider uppercase">Layanan</span>
+                    <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mt-3 mb-4">
                         Solusi Digital <span class="text-emerald-400">Lengkap</span>
                     </h1>
-                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    <p class="text-slate-400 text-base lg:text-lg max-w-2xl mx-auto">
                         Dari pengembangan website hingga maintenance server, saya siap membantu mewujudkan kebutuhan digital Anda.
                     </p>
                 </div>
@@ -418,186 +247,179 @@
         </section>
 
         <!-- Services Grid -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-24">
+        <section class="px-4 sm:px-6 lg:px-8 mb-12 lg:mb-24">
             <div class="max-w-7xl mx-auto">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Service 1: Web Development -->
+                <div class="services-grid grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
+
+                    <!-- Service 1 -->
                     <div class="reveal reveal-delay-1 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Web Development</h3>
-                        <p class="text-slate-400 mb-6">
-                            Pengembangan website modern, responsif, dan berperforma tinggi menggunakan teknologi terkini.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Website Company Profile</li>
-                            <li>Landing Page Konversi Tinggi</li>
-                            <li>Aplikasi Web Interaktif</li>
-                            <li>E-commerce Solutions</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">Web Development</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Pengembangan website modern, responsif, dan berperforma tinggi menggunakan teknologi terkini.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Website Company Profile</li>
+                                <li>Landing Page Konversi Tinggi</li>
+                                <li>Aplikasi Web Interaktif</li>
+                                <li>E-commerce Solutions</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Service 2: Maintenance VPS -->
+                    <!-- Service 2 -->
                     <div class="reveal reveal-delay-2 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Maintenance VPS</h3>
-                        <p class="text-slate-400 mb-6">
-                            Layanan pengelolaan dan maintenance server VPS Ubuntu untuk website dan aplikasi Anda.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Instalasi & Konfigurasi Server</li>
-                            <li>Monitoring & Backup</li>
-                            <li>Security Update & Patch</li>
-                            <li>Optimasi Performa</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">Maintenance VPS</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Layanan pengelolaan dan maintenance server VPS Ubuntu untuk website dan aplikasi Anda.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Instalasi & Konfigurasi Server</li>
+                                <li>Monitoring & Backup</li>
+                                <li>Security Update & Patch</li>
+                                <li>Optimasi Performa</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Service 3: Laravel Development -->
+                    <!-- Service 3 -->
                     <div class="reveal reveal-delay-3 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Laravel Development</h3>
-                        <p class="text-slate-400 mb-6">
-                            Pengembangan aplikasi web kompleks dengan framework Laravel yang powerful dan aman.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Sistem Informasi & Dashboard</li>
-                            <li>Aplikasi Manajemen</li>
-                            <li>API Development</li>
-                            <li>Database Design</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">Laravel Development</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Pengembangan aplikasi web kompleks dengan framework Laravel yang powerful dan aman.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Sistem Informasi & Dashboard</li>
+                                <li>Aplikasi Manajemen</li>
+                                <li>API Development</li>
+                                <li>Database Design</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Service 4: Optimization & SEO -->
+                    <!-- Service 4 -->
                     <div class="reveal reveal-delay-1 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Optimasi & SEO</h3>
-                        <p class="text-slate-400 mb-6">
-                            Optimasi performa website dan strategi SEO untuk meningkatkan visibilitas online.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Speed Optimization</li>
-                            <li>SEO Audit & Strategy</li>
-                            <li>Performance Tuning</li>
-                            <li>Analytics Setup</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">Optimasi & SEO</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Optimasi performa website dan strategi SEO untuk meningkatkan visibilitas online.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Speed Optimization</li>
+                                <li>SEO Audit & Strategy</li>
+                                <li>Performance Tuning</li>
+                                <li>Analytics Setup</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Service 5: AI Tools Integration -->
+                    <!-- Service 5 -->
                     <div class="reveal reveal-delay-2 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">AI Tools Integration</h3>
-                        <p class="text-slate-400 mb-6">
-                            Integrasi teknologi AI untuk meningkatkan fungsionalitas dan pengalaman pengguna.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Chatbot Integration</li>
-                            <li>AI-Powered Features</li>
-                            <li>Automation Tools</li>
-                            <li>Data Analysis</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">AI Tools Integration</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Integrasi teknologi AI untuk meningkatkan fungsionalitas dan pengalaman pengguna.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Chatbot Integration</li>
+                                <li>AI-Powered Features</li>
+                                <li>Automation Tools</li>
+                                <li>Data Analysis</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Service 6: Landing Page Specialist -->
+                    <!-- Service 6 -->
                     <div class="reveal reveal-delay-3 service-card">
                         <div class="service-icon">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                            </svg>
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                         </div>
-                        <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Landing Page Specialist</h3>
-                        <p class="text-slate-400 mb-6">
-                            Landing page profesional dengan desain modern, responsif, dan optimasi konversi.
-                        </p>
-                        <ul class="feature-list space-y-2 mb-8">
-                            <li>Single Page Landing Page</li>
-                            <li>Multi-Page Landing Page</li>
-                            <li>Integrasi Form & CMS</li>
-                            <li>Analytics & Tracking</li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto">
-                            Konsultasi Sekarang
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                        <div class="service-card-body">
+                            <h3 class="font-display text-lg lg:text-2xl font-semibold text-slate-200 mb-2 lg:mb-3">Landing Page Specialist</h3>
+                            <p class="text-slate-400 text-sm mb-4 lg:mb-6">Landing page profesional dengan desain modern, responsif, dan optimasi konversi.</p>
+                            <ul class="feature-list space-y-1 mb-6">
+                                <li>Single Page Landing Page</li>
+                                <li>Multi-Page Landing Page</li>
+                                <li>Integrasi Form & CMS</li>
+                                <li>Analytics & Tracking</li>
+                            </ul>
+                            <a href="contact.html" class="service-link inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium mt-auto text-sm">
+                                Konsultasi Sekarang
+                                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section (3 Paket dengan harga baru) -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-24">
+        <!-- Pricing -->
+        <section class="px-4 sm:px-6 lg:px-8 mb-12 lg:mb-24">
             <div class="max-w-7xl mx-auto">
-                <div class="reveal text-center mb-12">
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                <div class="reveal text-center mb-8 lg:mb-12">
+                    <h2 class="font-display text-2xl lg:text-4xl font-bold text-slate-100 mb-3">
                         Paket <span class="text-emerald-400">Layanan</span>
                     </h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">
-                        Pilih paket yang sesuai dengan kebutuhan website Anda
-                    </p>
+                    <p class="text-slate-400 text-sm lg:text-base max-w-2xl mx-auto">Pilih paket yang sesuai dengan kebutuhan website Anda</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                    <!-- Paket 1: Landing Page 1 Halaman - 250K -->
-                    <div class="reveal reveal-delay-1 pricing-card flex flex-col">
-                        <div class="text-center mb-6">
-                            <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Landing Page</h3>
-                            <div class="text-emerald-400 text-5xl font-bold mb-2">1 Halaman</div>
-                            <p class="text-slate-500 text-sm">Single Page, Fokus Konversi</p>
+                <!-- Swipe hint + scrollbar: hanya mobile -->
+                <div class="md:hidden mb-3">
+                    <div class="flex items-center justify-center gap-2 mb-2.5">
+                        <svg class="w-3.5 h-3.5 text-emerald-400 swipe-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        <span class="text-slate-400 text-xs">Geser ke samping untuk melihat semua paket</span>
+                        <svg class="w-3.5 h-3.5 text-emerald-400 swipe-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                    <!-- Custom scrollbar track -->
+                    <div class="scroll-track">
+                        <div class="scroll-thumb" id="pricingScrollThumb"></div>
+                    </div>
+                </div>
+
+                <div class="pricing-grid-wrapper" id="pricingWrapper">
+                <div class="pricing-grid grid md:grid-cols-3 gap-5 lg:gap-8 items-stretch">
+
+                    <!-- Paket 1 -->
+                    <div class="reveal reveal-delay-1 pricing-card">
+                        <div class="text-center mb-5">
+                            <h3 class="font-display text-xl font-semibold text-slate-200 mb-2">Landing Page</h3>
+                            <div class="text-emerald-400 text-3xl lg:text-5xl font-bold mb-1">1 Halaman</div>
+                            <p class="text-slate-500 text-xs">Single Page, Fokus Konversi</p>
                         </div>
-                        
                         <div class="flex-1">
-                            <ul class="feature-list space-y-3 mb-8">
+                            <ul class="feature-list space-y-1.5 mb-6">
                                 <li>1 Halaman Landing Page</li>
                                 <li>Desain Responsif Mobile</li>
                                 <li>Form Kontak / Newsletter</li>
@@ -605,33 +427,26 @@
                                 <li>Integrasi Google Maps</li>
                                 <li>Social Media Links</li>
                                 <li>Fast Loading Performance</li>
-                                <li class="text-emerald-400 font-semibold mt-2">Mulai dari</li>
                             </ul>
                         </div>
-
-                        <div class="text-center mb-6">
-                            <div class="price-tag">
-                                Rp 250K
-                                <span class="price-sub">/project</span>
-                            </div>
+                        <div class="text-center mb-5">
+                            <div class="price-tag">Rp 250K <span class="price-sub">/project</span></div>
                         </div>
-
-                        <a href="contact.html" class="block w-full py-3 px-4 text-center border border-emerald-500/50 text-emerald-400 rounded-xl hover:bg-emerald-500/10 transition-all duration-300 font-medium">
+                        <a href="contact.html" class="block w-full py-2.5 px-4 text-center border border-emerald-500/50 text-emerald-400 rounded-xl hover:bg-emerald-500/10 transition-all duration-300 font-medium text-sm">
                             Pilih Paket
                         </a>
                     </div>
 
-                    <!-- Paket 2: Landing Page Multi-Halaman - 500K (POPULER) -->
-                    <div class="reveal reveal-delay-2 pricing-card featured flex flex-col relative">
+                    <!-- Paket 2 (Featured) -->
+                    <div class="reveal reveal-delay-2 pricing-card featured">
                         <div class="popular-badge">Paling Populer</div>
-                        <div class="text-center mb-6">
-                            <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Landing Page</h3>
-                            <div class="text-emerald-400 text-5xl font-bold mb-2">Multi Halaman</div>
-                            <p class="text-slate-500 text-sm">3-5 Halaman, Lebih Lengkap</p>
+                        <div class="text-center mb-5">
+                            <h3 class="font-display text-xl font-semibold text-slate-200 mb-2">Landing Page</h3>
+                            <div class="text-emerald-400 text-3xl lg:text-5xl font-bold mb-1">Multi Halaman</div>
+                            <p class="text-slate-500 text-xs">3-5 Halaman, Lebih Lengkap</p>
                         </div>
-                        
                         <div class="flex-1">
-                            <ul class="feature-list space-y-3 mb-8">
+                            <ul class="feature-list space-y-1.5 mb-6">
                                 <li>3-5 Halaman Landing Page</li>
                                 <li>Desain Responsif Mobile</li>
                                 <li>Form Kontak & Booking</li>
@@ -640,33 +455,25 @@
                                 <li>Integrasi Google Maps</li>
                                 <li>Social Media Integration</li>
                                 <li>Analytics Setup</li>
-                                <li>Fast Loading Performance</li>
-                                <li class="text-emerald-400 font-semibold mt-2">Mulai dari</li>
                             </ul>
                         </div>
-
-                        <div class="text-center mb-6">
-                            <div class="price-tag">
-                                Rp 500K
-                                <span class="price-sub">/project</span>
-                            </div>
+                        <div class="text-center mb-5">
+                            <div class="price-tag">Rp 500K <span class="price-sub">/project</span></div>
                         </div>
-
-                        <a href="contact.html" class="block w-full py-3 px-4 text-center bg-gradient-to-r from-emerald-600 to-emerald-500 text-slate-900 font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300">
+                        <a href="contact.html" class="block w-full py-2.5 px-4 text-center bg-gradient-to-r from-emerald-600 to-emerald-500 text-slate-900 font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 text-sm">
                             Pilih Paket
                         </a>
                     </div>
 
-                    <!-- Paket 3: Web Dinamis - 1,2Jt keatas -->
-                    <div class="reveal reveal-delay-3 pricing-card flex flex-col">
-                        <div class="text-center mb-6">
-                            <h3 class="font-display text-2xl font-semibold text-slate-200 mb-3">Web Dinamis</h3>
-                            <div class="text-emerald-400 text-5xl font-bold mb-2">Full Stack</div>
-                            <p class="text-slate-500 text-sm">Dengan Database & CMS</p>
+                    <!-- Paket 3 -->
+                    <div class="reveal reveal-delay-3 pricing-card">
+                        <div class="text-center mb-5">
+                            <h3 class="font-display text-xl font-semibold text-slate-200 mb-2">Web Dinamis</h3>
+                            <div class="text-emerald-400 text-3xl lg:text-5xl font-bold mb-1">Full Stack</div>
+                            <p class="text-slate-500 text-xs">Dengan Database & CMS</p>
                         </div>
-                        
                         <div class="flex-1">
-                            <ul class="feature-list space-y-3 mb-8">
+                            <ul class="feature-list space-y-1.5 mb-6">
                                 <li>Website Dinamis + Database</li>
                                 <li>Multi Halaman (Unlimited)</li>
                                 <li>Admin Dashboard</li>
@@ -674,84 +481,74 @@
                                 <li>User Management</li>
                                 <li>Content Management System</li>
                                 <li>Advanced SEO Optimization</li>
-                                <li>Integrasi API (opsional)</li>
                                 <li>Maintenance 1 Bulan</li>
                                 <li>Training & Dokumentasi</li>
-                                <li class="text-emerald-400 font-semibold mt-2">Mulai dari</li>
                             </ul>
                         </div>
-
-                        <div class="text-center mb-6">
-                            <div class="price-tag">
-                                Rp 1,2Jt
-                                <span class="price-sub">/project</span>
-                            </div>
+                        <div class="text-center mb-5">
+                            <div class="price-tag">Rp 1,2Jt <span class="price-sub">/project</span></div>
                             <p class="text-slate-500 text-xs mt-1">* Harga dapat bervariasi sesuai kompleksitas</p>
                         </div>
-
-                        <a href="contact.html" class="block w-full py-3 px-4 text-center border border-emerald-500/50 text-emerald-400 rounded-xl hover:bg-emerald-500/10 transition-all duration-300 font-medium">
+                        <a href="contact.html" class="block w-full py-2.5 px-4 text-center border border-emerald-500/50 text-emerald-400 rounded-xl hover:bg-emerald-500/10 transition-all duration-300 font-medium text-sm">
                             Pilih Paket
                         </a>
                     </div>
-                </div>
 
-                <!-- Catatan Harga -->
-                <div class="reveal reveal-delay-1 text-center mt-8">
-                    <p class="text-slate-500 text-sm">
-                        * Harga dapat bervariasi tergantung kompleksitas dan kebutuhan spesifik proyek.
-                        <br>Konsultasi gratis untuk diskusi lebih lanjut.
+                </div><!-- end pricing-grid -->
+                </div><!-- end pricing-grid-wrapper -->
+
+                <div class="reveal reveal-delay-1 text-center mt-6">
+                    <p class="text-slate-500 text-xs lg:text-sm">
+                        * Harga dapat bervariasi tergantung kompleksitas dan kebutuhan spesifik proyek.<br>
+                        Konsultasi gratis untuk diskusi lebih lanjut.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="px-4 sm:px-6 lg:px-8 mb-24">
+        <!-- FAQ -->
+        <section class="px-4 sm:px-6 lg:px-8 mb-12 lg:mb-24">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal text-center mb-12">
-                    <h2 class="font-display text-3xl font-bold text-slate-100 mb-4">
+                <div class="reveal text-center mb-8 lg:mb-12">
+                    <h2 class="font-display text-2xl lg:text-3xl font-bold text-slate-100 mb-3">
                         Pertanyaan <span class="text-emerald-400">Umum</span>
                     </h2>
                 </div>
-
-                <div class="space-y-4">
-                    <div class="reveal reveal-delay-1 bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="font-display text-lg font-semibold text-slate-200 mb-2">Berapa lama waktu pengerjaan?</h3>
-                        <p class="text-slate-400">Landing page 1 halaman: 3-5 hari. Landing page multi-halaman: 5-7 hari. Web dinamis: 2-4 minggu tergantung kompleksitas.</p>
+                <div class="space-y-3">
+                    <div class="reveal reveal-delay-1 faq-item bg-slate-900/30 border border-slate-800/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-all duration-300">
+                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mb-1.5">Berapa lama waktu pengerjaan?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Landing page 1 halaman: 3-5 hari. Multi-halaman: 5-7 hari. Web dinamis: 2-4 minggu tergantung kompleksitas.</p>
                     </div>
-                    <div class="reveal reveal-delay-2 bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="font-display text-lg font-semibold text-slate-200 mb-2">Apakah termasuk hosting?</h3>
-                        <p class="text-slate-400">Untuk paket Web Dinamis termasuk setup hosting. Untuk paket landing page, bisa dibantu setup di hosting Anda atau direkomendasikan hosting terbaik.</p>
+                    <div class="reveal reveal-delay-2 faq-item bg-slate-900/30 border border-slate-800/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-all duration-300">
+                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mb-1.5">Apakah termasuk hosting?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Untuk paket Web Dinamis termasuk setup hosting. Untuk paket landing page, bisa dibantu setup di hosting Anda atau direkomendasikan hosting terbaik.</p>
                     </div>
-                    <div class="reveal reveal-delay-3 bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="font-display text-lg font-semibold text-slate-200 mb-2">Bagaimana sistem pembayaran?</h3>
-                        <p class="text-slate-400">Sistem pembayaran bertahap: 50% DP, 50% setelah proyek selesai dan disetujui. Untuk paket tertentu bisa dinegosiasikan.</p>
+                    <div class="reveal reveal-delay-3 faq-item bg-slate-900/30 border border-slate-800/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-all duration-300">
+                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mb-1.5">Bagaimana sistem pembayaran?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Sistem bertahap: 50% DP, 50% setelah proyek selesai dan disetujui. Untuk paket tertentu bisa dinegosiasikan.</p>
                     </div>
-                    <div class="reveal reveal-delay-1 bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
-                        <h3 class="font-display text-lg font-semibold text-slate-200 mb-2">Apakah source code diberikan?</h3>
-                        <p class="text-slate-400">Ya, source code lengkap akan diberikan setelah proyek selesai. Untuk web dinamis termasuk dokumentasi dan panduan penggunaan.</p>
+                    <div class="reveal reveal-delay-1 faq-item bg-slate-900/30 border border-slate-800/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-all duration-300">
+                        <h3 class="font-display text-base lg:text-lg font-semibold text-slate-200 mb-1.5">Apakah source code diberikan?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Ya, source code lengkap diberikan setelah proyek selesai. Untuk web dinamis termasuk dokumentasi dan panduan penggunaan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- CTA -->
         <section class="px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal relative overflow-hidden rounded-3xl p-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50 text-center">
+                <div class="reveal cta-section relative overflow-hidden rounded-3xl p-8 lg:p-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50 text-center">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
                     <div class="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-2xl"></div>
-                    
                     <div class="relative">
-                        <h2 class="font-display text-3xl font-bold text-slate-100 mb-4">Siap Memulai Proyek?</h2>
-                        <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                        <h2 class="font-display text-2xl lg:text-3xl font-bold text-slate-100 mb-3">Siap Memulai Proyek?</h2>
+                        <p class="text-slate-400 text-sm lg:text-base mb-6 max-w-xl mx-auto">
                             Mari diskusikan kebutuhan Anda dan wujudkan ide menjadi solusi digital yang nyata.
                         </p>
                         <a href="contact.html" class="btn-nav inline-flex mx-auto">
                             <span>Hubungi Saya Sekarang</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
                     </div>
                 </div>
@@ -759,10 +556,25 @@
         </section>
     </main>
 
-    <!-- Footer Container -->
     <div id="footer"></div>
-
-    <!-- Scripts -->
     <script src="js/components.js"></script>
+    <script>
+        // Pricing scroll thumb
+        const pricingWrapper = document.getElementById('pricingWrapper');
+        const thumb = document.getElementById('pricingScrollThumb');
+        if (pricingWrapper && thumb) {
+            pricingWrapper.addEventListener('scroll', function() {
+                const maxScroll = pricingWrapper.scrollWidth - pricingWrapper.clientWidth;
+                const ratio = maxScroll > 0 ? pricingWrapper.scrollLeft / maxScroll : 0;
+                // thumb width = 33%, so max translateX = (100 - 33) = 67%
+                thumb.style.transform = 'translateX(' + (ratio * 203) + '%)';
+            });
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('revealed'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
